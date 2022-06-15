@@ -23,5 +23,11 @@
     "tslint": "^5.12.1",
     "typescript": "^3.3.3",
     "web-vitals": "^2.1.4"
+  },
+  "engines":{
+    "node": "16.15.1"
+  },
+  "devDependencies": {
+    "babel-register": "6.26.0"
   }
 }
