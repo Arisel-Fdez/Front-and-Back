@@ -8,8 +8,6 @@ const User = getData.sequelizeClient.define('tbl_usersdb',{
     email: Sequelize.STRING,
     password: Sequelize.STRING,
     phone_number: Sequelize.STRING,
-    updateAt: Sequelize.STRING,
-    createdAt: Sequelize.STRING,
 },{
     tableName: 'tbl_usersdb'
 });

@@ -1,7 +1,6 @@
 import { Router } from 'express';
-import { success } from '../../network/response.js';
-import {getData} from '../../model/db.js';
-import { getUser } from '../../model/Users.js';
+import { success } from './response.js';
+import { getUser } from '../model/Users.js';
 
 const router = Router();
 
@@ -10,7 +9,7 @@ const router = Router();
 
 router.get('/check', function (req, res) {
     res.send({
-        success: "exito funciona",
+        success: "Servidor Check Success",
     })
 })
 

@@ -5,29 +5,23 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start:dev": "cross-env NODE_ENV=developmet node app.js",
+    "start:test": "cross-env NODE_ENV=test node app.js",
+    "start:prod": "cross-env NODE_ENV=production node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Arisel Fdez",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-scripts": "^5.0.1",
-    "sequelize": "^6.20.1",
-    "tslint": "^5.12.1",
-    "typescript": "^3.3.3",
-    "web-vitals": "^2.1.4"
-  },
-  "engines":{
-    "node": "16.15.1"
+    "sequelize": "^6.20.1"
   },
   "devDependencies": {
-    "babel-register": "6.26.0"
+    "cross-env": "^7.0.3"
   }
 }
