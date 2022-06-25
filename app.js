@@ -6,7 +6,7 @@ import user from './router/network.js';
 const app = express();
 
 //ROUTERS
-app.use('/api/user', user)
+app.use('/api/user', user);
 
 //Servidor activo
 app.listen(api.port, () => {

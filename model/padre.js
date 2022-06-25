@@ -1,19 +1,19 @@
 import { getData } from "./db.js";
 import { DataTypes } from "sequelize";
-import { getpadre } from "../model/padre.js";
+import { gethijo } from "../model/hijo.js";
 
-const User = getData.sequelizeClient.define('tbl_usersdb', {
+const padre = getData.sequelizeClient.define('tbl_padredb', {
     id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
     },
     name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    email: {
+    ap_paterno: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: {
@@ -21,15 +21,18 @@ const User = getData.sequelizeClient.define('tbl_usersdb', {
             msg: 'This username is already taken.'
         },
     },
-    password: {
+    ap_materno: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    phone_number: DataTypes.STRING,
+    edad: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 
 
 }, {
-    tableName: 'tbl_usersdb',
+    tableName: 'tbl_padredb',
     freezeTableName: true,
     hooks: {
         beforeCreate: (user, 
@@ -42,12 +45,12 @@ const User = getData.sequelizeClient.define('tbl_usersdb', {
 
 });
 
-User.hasMany(getpadre,{
-    foringnkey: "id_user",
+padre.hasMany(gethijo,{
+    foringnkey: "id_hijo",
 });
 
-getpadre.belongsTo(User);
+gethijo.belongsTo(padre);
 
 
 
-export const getUser = User;
+export const getpadre = padre;

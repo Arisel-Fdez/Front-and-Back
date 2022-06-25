@@ -22,23 +22,23 @@ const sequelizeClient = (() => {
 
         case 'test':
             return new Sequelize(db.database, db.user, db.password, {
-                dialectOptions: {
+               /* dialectOptions: {
                     ssl: {
                         require: true,
                         rejectUnauthorized: false
                     }
-                },
+                },*/
                 host: db.host,
                 dialect: 'postgres',
             });
 
         default:
             return new Sequelize(db.database, db.user, db.password, {
-                dialectOptions: {
+               /* dialectOptions: {
                     ssl: {
                         require: true,
                     }
-                },
+                },*/
                 host: db.host,
                 dialect: 'postgres',
             });
